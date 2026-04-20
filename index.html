@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bykdg is an independent mobile app studio building useful tools for everyday life — cosmetic safety, legal assistance, education, business finance, and multiplayer games." />
+  <meta name="keywords" content="Bykdg, Ali Büyükdağ, indie developer, mobile apps, Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia" />
+  <meta name="author" content="Bykdg" />
+  <meta property="og:title" content="Bykdg — Independent Mobile App Studio" />
+  <meta property="og:description" content="Mobile apps built with care. Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia." />
+  <meta property="og:type" content="website" />
+  <title>Bykdg — Independent Mobile App Studio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      --purple: #7C4DFF;
+      --purple-dark: #5E35B1;
+      --purple-light: #B39DDB;
+      --bg: #0F0B1F;
+      --bg-card: #1A1330;
+      --bg-card-hover: #221943;
+      --text: #F5F3FF;
+      --text-dim: #A8A1C2;
+      --border: #2A1F4A;
+      --accent: #FF6EC7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--purple-light); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--accent); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 11, 31, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 16px 0;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--text-dim); font-weight: 500; font-size: 15px; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(124, 77, 255, 0.15) 0%, transparent 70%);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(124, 77, 255, 0.15);
+      border: 1px solid rgba(124, 77, 255, 0.3);
+      border-radius: 20px;
+      color: var(--purple-light);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+    h1 .gradient {
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-dim);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all .2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+      color: white;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(124, 77, 255, 0.4);
+      color: white;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      background: var(--bg-card);
+      color: var(--text);
+    }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--purple-light);
+      margin-bottom: 12px;
+    }
+    .section-heading {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      color: var(--text-dim);
+      font-size: 17px;
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .stat {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      color: var(--text-dim);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Apps */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .app-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .app-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--purple);
+      transform: translateY(-4px);
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+    }
+    .app-card.shevana .app-icon { background: linear-gradient(135deg, #FF6EC7 0%, #7C4DFF 100%); }
+    .app-card.hoskin .app-icon { background: linear-gradient(135deg, #FF9800 0%, #F44336 100%); }
+    .app-card.hukuk .app-icon { background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); }
+    .app-card.iscim .app-icon { background: linear-gradient(135deg, #059669 0%, #10B981 100%); }
+    .app-card.okutopia .app-icon { background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%); }
+
+    .app-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .app-category {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--purple-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .app-desc {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 20px;
+      min-height: 66px;
+    }
+    .app-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 60px 40px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .contact h2 { margin-bottom: 16px; }
+    .contact p { color: var(--text-dim); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .contact-grid {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .contact-item:hover {
+      border-color: var(--purple);
+      color: var(--text);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+    }
+    footer .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    footer p { color: var(--text-dim); font-size: 14px; }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 14px; }
+      section { padding: 60px 0; }
+      .hero { padding: 80px 0 60px; }
+      .contact { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Bykdg</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#apps">Apps</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="badge">INDEPENDENT MOBILE APP STUDIO</div>
+      <h1>Building <span class="gradient">useful apps</span><br />for everyday life</h1>
+      <p>Bykdg is an indie mobile studio based in Türkiye. We build focused, privacy-respecting apps across cosmetics, education, law, finance, and gaming.</p>
+      <div class="hero-cta">
+        <a href="#apps" class="btn btn-primary">Explore our apps →</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="section-title">About us</div>
+          <h2 class="section-heading">A small studio with a focus on craft</h2>
+          <p style="color: var(--text-dim); font-size: 17px; margin-bottom: 16px;">
+            Bykdg was founded by Ali Büyükdağ as a platform to ship independently-developed mobile applications. We ship under a single developer identity on Google Play and bring each product to life with the same attention to detail — from user interface down to backend reliability.
+          </p>
+          <p style="color: var(--text-dim); font-size: 17px;">
+            Our apps share a common philosophy: solve one real problem well, protect user privacy, and keep the experience simple.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Apps shipped</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Distinct categories</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">TR</div>
+            <div class="stat-label">Based in Türkiye</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Privacy-first</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="container">
+      <div class="section-title">Our apps</div>
+      <h2 class="section-heading">Products we ship</h2>
+      <p class="section-desc">Each app in our portfolio is built to address a specific, everyday need. All apps are available on Google Play.</p>
+
+      <div class="apps-grid">
+        <div class="app-card shevana">
+          <div class="app-icon">✨</div>
+          <div class="app-category">Beauty &amp; Personal Care</div>
+          <div class="app-name">Shevana</div>
+          <div class="app-desc">Scan cosmetic and personal care products to analyze their ingredients (INCI) against your skin profile. Barcode scanning, ingredient database, brand comparisons.</div>
+          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.safecheck.app" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+        </div>
+
+        <div class="app-card hoskin">
+          <div class="app-icon">🃏</div>
+          <div class="app-category">Card Game</div>
+          <div class="app-name">Hoşkin Arena</div>
+          <div class="app-desc">A multiplayer card game platform for classic Turkish table games. Real-time matches, lobbies, and ranking.</div>
+          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.hoskin_arena" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+        </div>
+
+        <div class="app-card hukuk">
+          <div class="app-icon">⚖️</div>
+          <div class="app-category">Legal Assistance</div>
+          <div class="app-name">HukukApp</div>
+          <div class="app-desc">A legal document and consultation companion — templates, resource lookup, and guidance for common legal questions in Türkiye.</div>
+          <a href="https://play.google.com/store/apps/details?id=com.hukukapp.app" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+        </div>
+
+        <div class="app-card iscim">
+          <div class="app-icon">📊</div>
+          <div class="app-category">Business &amp; Finance</div>
+          <div class="app-name">İscim</div>
+          <div class="app-desc">Small business bookkeeping and finance tracking. Invoices, expenses, customers, and simple financial reporting in one place.</div>
+          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.iscim" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+        </div>
+
+        <div class="app-card okutopia">
+          <div class="app-icon">📚</div>
+          <div class="app-category">Children &amp; Education</div>
+          <div class="app-name">Okutopia</div>
+          <div class="app-desc">A reading and learning app for children. Interactive stories, vocabulary building, and safe content curated for young readers.</div>
+          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.okutopia" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="section-title">Contact</div>
+        <h2 class="section-heading">Get in touch</h2>
+        <p>For support, partnership inquiries, or press — we read every message and respond within a few business days.</p>
+        <div class="contact-grid">
+          <a href="mailto:bykdag.ali@gmail.com" class="contact-item">
+            <span>✉️</span> bykdag.ali@gmail.com
+          </a>
+          <a href="support.html" class="contact-item">
+            <span>💬</span> Support center
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#apps">Apps</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:bykdag.ali@gmail.com">Contact</a>
+      </div>
+      <p>© <span id="year"></span> Bykdg. Built in Türkiye with care.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
