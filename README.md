@@ -131,7 +131,7 @@ Sitenin teması Shevana'nın ikon renklerinden esinlenildi:
 ## 📝 İçerik Güncelleme
 
 - **Yeni uygulama eklemek:** `index.html` içinde `.apps-grid` bölümüne yeni bir `<div class="app-card">` kopyala
-- **İletişim e-postasını değiştirmek:** Tüm HTML dosyalarında `bykdag.ali@gmail.com` yerine yenisini koy
+- **İletişim e-postasını değiştirmek:** Tüm HTML dosyalarında `alibykdag@gmail.com` yerine yenisini koy
 - **Logo/isim değişimi:** Her HTML'deki `.logo` class'lı elementlere dokun
 
 ## Lisans
