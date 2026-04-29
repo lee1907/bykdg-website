@@ -4,12 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bykdg is an independent mobile app studio building useful tools for everyday life — cosmetic safety, legal assistance, education, business finance, and multiplayer games." />
-  <meta name="keywords" content="Bykdg, Ali Büyükdağ, indie developer, mobile apps, Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia" />
+  <meta name="keywords" content="Bykdg, Ali Büyükdağ, indie developer, mobile apps, Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia, Türkiye, Flutter, Firebase" />
   <meta name="author" content="Bykdg" />
+  <meta name="theme-color" content="#7C4DFF" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Bykdg — Independent Mobile App Studio" />
-  <meta property="og:description" content="Mobile apps built with care. Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia." />
+  <meta property="og:description" content="5 mobile apps built with care: Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia. Independent studio based in Türkiye." />
   <meta property="og:type" content="website" />
-  <title>Bykdg — Independent Mobile App Studio</title>
+  <meta property="og:url" content="https://lee1907.github.io/bykdg-website/" />
+  <meta property="og:image" content="https://lee1907.github.io/bykdg-website/favicon.svg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bykdg — Independent Mobile App Studio" />
+  <meta name="twitter:description" content="5 focused mobile apps. Privacy-first. Built in Türkiye." />
+
+  <title>Bykdg — Independent Mobile App Studio | Shevana, Hoşkin Arena, HukukApp, İscim, Okutopia</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <style>
     :root {
@@ -21,37 +32,36 @@
       --bg-card-hover: #221943;
       --text: #F5F3FF;
       --text-dim: #A8A1C2;
+      --text-faint: #6B6585;
       --border: #2A1F4A;
       --accent: #FF6EC7;
+      --success: #10B981;
+      --warning: #F59E0B;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     a { color: var(--purple-light); text-decoration: none; transition: color .2s; }
     a:hover { color: var(--accent); }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-    /* Nav */
+    /* ─── Navigation ─── */
     nav {
       position: sticky;
       top: 0;
       background: rgba(15, 11, 31, 0.85);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       z-index: 100;
       padding: 16px 0;
@@ -74,7 +84,7 @@
     .nav-links a { color: var(--text-dim); font-weight: 500; font-size: 15px; }
     .nav-links a:hover { color: var(--text); }
 
-    /* Hero */
+    /* ─── Hero ─── */
     .hero {
       padding: 120px 0 100px;
       text-align: center;
@@ -89,7 +99,7 @@
       transform: translateX(-50%);
       width: 800px;
       height: 800px;
-      background: radial-gradient(circle, rgba(124, 77, 255, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(124, 77, 255, 0.18) 0%, transparent 70%);
       z-index: 0;
     }
     .hero-content { position: relative; z-index: 1; }
@@ -148,7 +158,7 @@
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(124, 77, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(124, 77, 255, 0.45);
       color: white;
     }
     .btn-secondary {
@@ -159,9 +169,10 @@
     .btn-secondary:hover {
       background: var(--bg-card);
       color: var(--text);
+      border-color: var(--purple);
     }
 
-    /* Sections */
+    /* ─── Sections ─── */
     section { padding: 80px 0; }
     .section-title {
       font-size: 14px;
@@ -184,7 +195,7 @@
       margin-bottom: 48px;
     }
 
-    /* About */
+    /* ─── About ─── */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -202,6 +213,11 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
+      transition: border-color .2s, transform .2s;
+    }
+    .stat:hover {
+      border-color: var(--purple);
+      transform: translateY(-2px);
     }
     .stat-num {
       font-size: 32px;
@@ -218,10 +234,48 @@
       font-weight: 500;
     }
 
-    /* Apps */
+    /* ─── Values ─── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .value {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      transition: all .2s;
+    }
+    .value:hover {
+      border-color: var(--purple);
+      transform: translateY(-2px);
+    }
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .value h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .value p {
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    /* ─── Apps ─── */
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
     .app-card {
@@ -238,6 +292,27 @@
       border-color: var(--purple);
       transform: translateY(-4px);
     }
+    .app-status {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .app-status.live {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .app-status.review {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--warning);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
     .app-icon {
       width: 64px;
       height: 64px;
@@ -251,7 +326,7 @@
     }
     .app-card.shevana .app-icon { background: linear-gradient(135deg, #FF6EC7 0%, #7C4DFF 100%); }
     .app-card.hoskin .app-icon { background: linear-gradient(135deg, #FF9800 0%, #F44336 100%); }
-    .app-card.hukuk .app-icon { background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%); }
+    .app-card.hukuk .app-icon { background: linear-gradient(135deg, #4A3B8F 0%, #6B5BAD 100%); }
     .app-card.iscim .app-icon { background: linear-gradient(135deg, #059669 0%, #10B981 100%); }
     .app-card.okutopia .app-icon { background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%); }
 
@@ -271,18 +346,70 @@
     .app-desc {
       color: var(--text-dim);
       font-size: 15px;
-      margin-bottom: 20px;
-      min-height: 66px;
+      margin-bottom: 16px;
+      min-height: 90px;
     }
-    .app-link {
+    .app-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    .app-features li {
+      color: var(--text-faint);
+      font-size: 13px;
+      padding: 4px 0;
+    }
+    .app-features li::before {
+      content: '→';
+      color: var(--purple-light);
+      margin-right: 8px;
+    }
+    .app-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .app-action {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(124, 77, 255, 0.1);
+      border: 1px solid rgba(124, 77, 255, 0.25);
+      color: var(--text);
+    }
+    .app-action:hover {
+      background: rgba(124, 77, 255, 0.2);
+      color: var(--text);
+    }
+    .app-action.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
     }
 
-    /* Contact */
+    /* ─── Tech Stack ─── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .tech-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tech-emoji { font-size: 22px; }
+    .tech-name { font-weight: 600; font-size: 14px; }
+    .tech-desc { color: var(--text-dim); font-size: 12px; }
+
+    /* ─── Contact ─── */
     .contact {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -290,7 +417,20 @@
       padding: 60px 40px;
       text-align: center;
       margin: 40px 0;
+      position: relative;
+      overflow: hidden;
     }
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 110, 199, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    .contact > * { position: relative; z-index: 1; }
     .contact h2 { margin-bottom: 16px; }
     .contact p { color: var(--text-dim); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
     .contact-grid {
@@ -315,7 +455,7 @@
       color: var(--text);
     }
 
-    /* Footer */
+    /* ─── Footer ─── */
     footer {
       border-top: 1px solid var(--border);
       padding: 40px 0;
@@ -329,6 +469,7 @@
       flex-wrap: wrap;
     }
     footer p { color: var(--text-dim); font-size: 14px; }
+    footer .footer-tagline { color: var(--text-faint); font-size: 13px; margin-top: 8px; }
 
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -346,6 +487,7 @@
       <div class="logo">Bykdg</div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#values">Values</a>
         <a href="#apps">Apps</a>
         <a href="#contact">Contact</a>
       </div>
@@ -354,9 +496,9 @@
 
   <header class="hero">
     <div class="container hero-content">
-      <div class="badge">INDEPENDENT MOBILE APP STUDIO</div>
+      <div class="badge">INDEPENDENT MOBILE APP STUDIO · TÜRKİYE</div>
       <h1>Building <span class="gradient">useful apps</span><br />for everyday life</h1>
-      <p>Bykdg is an indie mobile studio based in Türkiye. We build focused, privacy-respecting apps across cosmetics, education, law, finance, and gaming.</p>
+      <p>Bykdg is an indie mobile studio shipping focused, privacy-respecting apps across cosmetics, legal assistance, education, business finance, and gaming. Five products. One philosophy: solve a real problem well.</p>
       <div class="hero-cta">
         <a href="#apps" class="btn btn-primary">Explore our apps →</a>
         <a href="#contact" class="btn btn-secondary">Get in touch</a>
@@ -371,10 +513,10 @@
           <div class="section-title">About us</div>
           <h2 class="section-heading">A small studio with a focus on craft</h2>
           <p style="color: var(--text-dim); font-size: 17px; margin-bottom: 16px;">
-            Bykdg was founded by Ali Büyükdağ as a platform to ship independently-developed mobile applications. We ship under a single developer identity on Google Play and bring each product to life with the same attention to detail — from user interface down to backend reliability.
+            Bykdg was founded by Ali Büyükdağ as a platform to ship independently-developed mobile applications. We work under a single developer identity on Google Play and Apple App Store, and we bring each product to life with the same attention to detail — from interface polish down to backend reliability.
           </p>
           <p style="color: var(--text-dim); font-size: 17px;">
-            Our apps share a common philosophy: solve one real problem well, protect user privacy, and keep the experience simple.
+            Our apps share a common philosophy: solve one real problem well, protect user privacy, and keep the experience simple. We use Flutter for a unified codebase across iOS and Android, and Firebase for authentication, analytics, and crash reporting.
           </p>
         </div>
         <div class="about-stats">
@@ -383,17 +525,48 @@
             <div class="stat-label">Apps shipped</div>
           </div>
           <div class="stat">
-            <div class="stat-num">5</div>
-            <div class="stat-label">Distinct categories</div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">Platforms (iOS · Android)</div>
           </div>
           <div class="stat">
             <div class="stat-num">TR</div>
             <div class="stat-label">Based in Türkiye</div>
           </div>
           <div class="stat">
-            <div class="stat-num">∞</div>
-            <div class="stat-label">Privacy-first</div>
+            <div class="stat-num">KVKK</div>
+            <div class="stat-label">Privacy compliant</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <div class="container">
+      <div class="section-title">What we believe</div>
+      <h2 class="section-heading">Values that shape every release</h2>
+      <p class="section-desc">We don't ship for vanity metrics. Each release goes through a quality bar shaped by these principles.</p>
+
+      <div class="values-grid">
+        <div class="value">
+          <div class="value-icon">🔒</div>
+          <h3>Privacy first</h3>
+          <p>User data stays on-device when possible. KVKK and GDPR compliant. Account deletion in seconds. No third-party trackers we don't control.</p>
+        </div>
+        <div class="value">
+          <div class="value-icon">⚡</div>
+          <h3>Performance over features</h3>
+          <p>Smooth scrolling, fast launches, no jank. Every app runs offline-first when feasible. Battery and bandwidth conscious by default.</p>
+        </div>
+        <div class="value">
+          <div class="value-icon">🎯</div>
+          <h3>One clear purpose</h3>
+          <p>Each app solves a specific everyday problem instead of trying to be everything. Focus over feature creep.</p>
+        </div>
+        <div class="value">
+          <div class="value-icon">🤝</div>
+          <h3>Direct support</h3>
+          <p>Every email gets a human reply. We read crash reports, ship patches fast, and respect user feedback in roadmaps.</p>
         </div>
       </div>
     </div>
@@ -403,47 +576,146 @@
     <div class="container">
       <div class="section-title">Our apps</div>
       <h2 class="section-heading">Products we ship</h2>
-      <p class="section-desc">Each app in our portfolio is built to address a specific, everyday need. All apps are available on Google Play.</p>
+      <p class="section-desc">Each app addresses a specific everyday need. All are available on Google Play; iOS rollout in progress.</p>
 
       <div class="apps-grid">
-        <div class="app-card shevana">
-          <div class="app-icon">✨</div>
-          <div class="app-category">Beauty &amp; Personal Care</div>
-          <div class="app-name">Shevana</div>
-          <div class="app-desc">Scan cosmetic and personal care products to analyze their ingredients (INCI) against your skin profile. Barcode scanning, ingredient database, brand comparisons.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.safecheck.app" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
-        </div>
-
-        <div class="app-card hoskin">
-          <div class="app-icon">🃏</div>
-          <div class="app-category">Card Game</div>
-          <div class="app-name">Hoşkin Arena</div>
-          <div class="app-desc">A multiplayer card game platform for classic Turkish table games. Real-time matches, lobbies, and ranking.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.hoskin_arena" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
-        </div>
-
         <div class="app-card hukuk">
+          <div class="app-status review">iOS Coming Soon</div>
           <div class="app-icon">⚖️</div>
           <div class="app-category">Legal Assistance</div>
           <div class="app-name">HukukApp</div>
-          <div class="app-desc">A legal document and consultation companion — templates, resource lookup, and guidance for common legal questions in Türkiye.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.hukukapp.app" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+          <div class="app-desc">AI-assisted legal document and consultation companion for Türkiye. 200+ professional petition and contract templates with auto-fill, AI assistant, and on-device tebligat OCR.</div>
+          <ul class="app-features">
+            <li>200+ Turkish legal templates</li>
+            <li>AI legal assistant (educational use)</li>
+            <li>Tebligat OCR with on-device ML Kit</li>
+            <li>Auto-fill, PDF export, fee calculator</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.hukukapp.app" class="app-action" target="_blank" rel="noopener">Google Play →</a>
+            <a href="https://lee1907.github.io/hukukapp-landing/" class="app-action" target="_blank" rel="noopener">Web Site →</a>
+          </div>
+        </div>
+
+        <div class="app-card hoskin">
+          <div class="app-status live">Live</div>
+          <div class="app-icon">🃏</div>
+          <div class="app-category">Card Game</div>
+          <div class="app-name">Hoşkin Arena</div>
+          <div class="app-desc">A real-time multiplayer card game platform for classic Turkish table games. Lobbies, ranking, and seasonal events with friends.</div>
+          <ul class="app-features">
+            <li>Real-time multiplayer matches</li>
+            <li>Skill-based ranking system</li>
+            <li>Friend lobbies and rooms</li>
+            <li>Cross-platform iOS · Android</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.alibykdag.hoskin_arena" class="app-action" target="_blank" rel="noopener">Google Play →</a>
+          </div>
+        </div>
+
+        <div class="app-card shevana">
+          <div class="app-status live">Live</div>
+          <div class="app-icon">✨</div>
+          <div class="app-category">Beauty &amp; Personal Care</div>
+          <div class="app-name">Shevana</div>
+          <div class="app-desc">Scan cosmetic products to analyze ingredients (INCI) against your skin profile. Barcode scanning, ingredient database, brand comparisons, and pregnancy / menstrual safety.</div>
+          <ul class="app-features">
+            <li>INCI ingredient analysis</li>
+            <li>Barcode product scanning</li>
+            <li>Personal skin profile matching</li>
+            <li>Pregnancy and cycle awareness</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.alibykdag.safecheck.app" class="app-action" target="_blank" rel="noopener">Google Play →</a>
+          </div>
         </div>
 
         <div class="app-card iscim">
+          <div class="app-status live">Live</div>
           <div class="app-icon">📊</div>
           <div class="app-category">Business &amp; Finance</div>
           <div class="app-name">İscim</div>
-          <div class="app-desc">Small business bookkeeping and finance tracking. Invoices, expenses, customers, and simple financial reporting in one place.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.iscim" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+          <div class="app-desc">Small business bookkeeping and finance tracking. Invoices, expenses, customers, and simple financial reporting in one place — built for sole proprietors and small teams.</div>
+          <ul class="app-features">
+            <li>Invoice and expense tracking</li>
+            <li>Customer database</li>
+            <li>Monthly financial reports</li>
+            <li>Tax-friendly categorization</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.alibykdag.iscim" class="app-action" target="_blank" rel="noopener">Google Play →</a>
+          </div>
         </div>
 
         <div class="app-card okutopia">
+          <div class="app-status live">Live</div>
           <div class="app-icon">📚</div>
           <div class="app-category">Children &amp; Education</div>
           <div class="app-name">Okutopia</div>
           <div class="app-desc">A reading and learning app for children. Interactive stories, vocabulary building, and safe content curated for young readers.</div>
-          <a href="https://play.google.com/store/apps/details?id=com.alibykdag.okutopia" class="app-link" target="_blank" rel="noopener">View on Google Play →</a>
+          <ul class="app-features">
+            <li>Age-appropriate stories</li>
+            <li>Vocabulary builder</li>
+            <li>Parent-curated safe content</li>
+            <li>Offline reading mode</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.alibykdag.okutopia" class="app-action" target="_blank" rel="noopener">Google Play →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech">
+    <div class="container">
+      <div class="section-title">Technology</div>
+      <h2 class="section-heading">Built with modern tools</h2>
+      <p class="section-desc">A unified Flutter codebase across iOS and Android, backed by Firebase services for reliability.</p>
+
+      <div class="tech-grid">
+        <div class="tech-item">
+          <span class="tech-emoji">📱</span>
+          <div>
+            <div class="tech-name">Flutter</div>
+            <div class="tech-desc">Single codebase, native performance</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <span class="tech-emoji">🔥</span>
+          <div>
+            <div class="tech-name">Firebase</div>
+            <div class="tech-desc">Auth, Firestore, Crashlytics, Analytics</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <span class="tech-emoji">🤖</span>
+          <div>
+            <div class="tech-name">ML Kit</div>
+            <div class="tech-desc">On-device OCR and recognition</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <span class="tech-emoji">📦</span>
+          <div>
+            <div class="tech-name">Hive</div>
+            <div class="tech-desc">Encrypted local storage</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <span class="tech-emoji">⚙️</span>
+          <div>
+            <div class="tech-name">Codemagic</div>
+            <div class="tech-desc">CI/CD for iOS and Android</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <span class="tech-emoji">📊</span>
+          <div>
+            <div class="tech-name">Sentry</div>
+            <div class="tech-desc">Error tracking and performance</div>
+          </div>
         </div>
       </div>
     </div>
@@ -462,6 +734,9 @@
           <a href="support.html" class="contact-item">
             <span>💬</span> Support center
           </a>
+          <a href="privacy.html" class="contact-item">
+            <span>🔒</span> Privacy policy
+          </a>
         </div>
       </div>
     </div>
@@ -471,12 +746,15 @@
     <div class="container">
       <div class="footer-links">
         <a href="#about">About</a>
+        <a href="#values">Values</a>
         <a href="#apps">Apps</a>
+        <a href="#tech">Technology</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="support.html">Support</a>
         <a href="mailto:alibykdag@gmail.com">Contact</a>
       </div>
-      <p>© <span id="year"></span> Bykdg. Built in Türkiye with care.</p>
+      <p>© <span id="year"></span> Bykdg. All rights reserved.</p>
+      <p class="footer-tagline">Built in Türkiye with care.</p>
     </div>
   </footer>
 
