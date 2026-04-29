@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy for Bykdg apps — Shevana, Hoşkin Arena, HukukApp, İscim, and Okutopia." />
-  <title>Privacy Policy — Bykdg</title>
+  <meta name="description" content="Bykdg uygulamaları için gizlilik politikası — Shevana, Hoşkin Arena, HukukApp, FirmaPro ve Okutopia." />
+  <link rel="alternate" hreflang="tr" href="https://lee1907.github.io/bykdg-website/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://lee1907.github.io/bykdg-website/privacy-en.html" />
+  <title>Gizlilik Politikası — Bykdg</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <style>
     :root {
@@ -48,6 +50,26 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(124, 77, 255, 0.15);
+      border: 1px solid rgba(124, 77, 255, 0.3);
+      border-radius: 8px;
+      color: var(--purple-light);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    .lang-switch:hover {
+      background: rgba(124, 77, 255, 0.25);
+      color: var(--text);
+      border-color: var(--purple);
     }
     .container-doc {
       max-width: 820px;
@@ -93,93 +115,97 @@
   <nav>
     <div class="container">
       <a href="index.html" class="logo">Bykdg</a>
-      <a href="index.html" style="color: var(--text-dim); text-decoration: none;">← Back to home</a>
+      <div class="nav-right">
+        <a href="index.html" style="color: var(--text-dim); text-decoration: none;">← Anasayfa</a>
+        <a href="privacy-en.html" class="lang-switch">🇬🇧 EN</a>
+      </div>
     </div>
   </nav>
 
   <main class="container-doc">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 20, 2026</p>
+    <h1>Gizlilik Politikası</h1>
+    <p class="updated">Son güncelleme: 29 Nisan 2026</p>
 
     <p>
-      This Privacy Policy describes how <strong>Bykdg</strong> ("we", "us", "our") collects, uses, and protects information when you use our mobile applications, including <strong>Shevana</strong>, <strong>Hoşkin Arena</strong>, <strong>HukukApp</strong>, <strong>İscim</strong>, and <strong>Okutopia</strong> ("Apps"). By using our Apps, you agree to the practices described in this policy.
+      Bu Gizlilik Politikası, <strong>Bykdg</strong>'nin ("biz", "bize", "bizim") mobil uygulamalarımızı kullandığınızda nasıl bilgi topladığını, kullandığını ve koruduğunu açıklar. Uygulamalarımız: <strong>Shevana</strong>, <strong>Hoşkin Arena</strong>, <strong>HukukApp</strong>, <strong>FirmaPro</strong> ve <strong>Okutopia</strong> ("Uygulamalar"). Uygulamalarımızı kullanarak bu politikada açıklanan uygulamaları kabul etmiş olursunuz.
     </p>
 
-    <h2>1. Information We Collect</h2>
-    <p>We collect only the information needed to operate and improve our Apps:</p>
+    <h2>1. Topladığımız Bilgiler</h2>
+    <p>Yalnızca uygulamalarımızı çalıştırmak ve geliştirmek için gereken bilgileri topluyoruz:</p>
     <ul>
-      <li><strong>Account information:</strong> When you sign in (for example with Google Sign-In or email), we receive your name, email address, and a unique user identifier.</li>
-      <li><strong>User-generated content:</strong> Data you enter into the App — such as product scans, routines, tracking entries, and preferences — is stored so the App can function as intended.</li>
-      <li><strong>Device and usage data:</strong> Basic analytics such as device model, OS version, app version, crashes, and feature usage, collected through Firebase Analytics and Crashlytics.</li>
-      <li><strong>Purchase data:</strong> Subscription or in-app purchase confirmations, processed by Google Play Billing. We do not receive or store card details.</li>
+      <li><strong>Hesap bilgileri:</strong> Giriş yaptığınızda (örneğin Google ile Giriş, Apple ile Giriş veya e-posta), adınızı, e-posta adresinizi ve benzersiz bir kullanıcı kimliğini alırız.</li>
+      <li><strong>Kullanıcı tarafından oluşturulan içerik:</strong> Uygulamaya girdiğiniz veriler — ürün taramaları, rutinler, takip kayıtları ve tercihler — uygulamanın amaçlandığı şekilde çalışabilmesi için saklanır.</li>
+      <li><strong>Cihaz ve kullanım verileri:</strong> Cihaz modeli, işletim sistemi sürümü, uygulama sürümü, çökmeler ve özellik kullanımı gibi temel analiz verileri Firebase Analytics ve Crashlytics aracılığıyla toplanır.</li>
+      <li><strong>Satın alma verileri:</strong> Abonelik veya uygulama içi satın alma onayları Google Play Faturalandırma tarafından işlenir. Kart bilgilerinizi almaz ve saklamayız.</li>
     </ul>
 
-    <h2>2. How We Use Your Information</h2>
+    <h2>2. Bilgilerinizi Nasıl Kullanırız</h2>
     <ul>
-      <li>To provide and maintain App features.</li>
-      <li>To sync your data across devices when you sign in.</li>
-      <li>To detect, prevent, and fix crashes and abuse.</li>
-      <li>To improve the App through aggregated, anonymized analytics.</li>
-      <li>To show ads (in free tiers) through Google AdMob, or to deliver premium features for subscribers.</li>
+      <li>Uygulama özelliklerini sağlamak ve sürdürmek için.</li>
+      <li>Giriş yaptığınızda verilerinizi cihazlar arasında senkronize etmek için.</li>
+      <li>Çökmeleri ve kötüye kullanımı tespit etmek, önlemek ve düzeltmek için.</li>
+      <li>Birleştirilmiş ve anonim hale getirilmiş analizler aracılığıyla uygulamayı geliştirmek için.</li>
+      <li>Ücretsiz katmanlarda Google AdMob aracılığıyla reklam göstermek veya aboneler için premium özellikler sunmak için.</li>
     </ul>
 
-    <h2>3. Health-Related Data (Shevana)</h2>
+    <h2>3. Sağlıkla İlgili Veriler (Shevana)</h2>
     <p>
-      Some features in Shevana — such as cycle tracking, pregnancy tracking, skincare routines, and medication reminders — involve sensitive personal information. We treat this data with special care:
+      Shevana'daki bazı özellikler — adet döngüsü takibi, hamilelik takibi, cilt bakım rutinleri ve ilaç hatırlatıcıları — hassas kişisel bilgileri içerir. Bu verileri özel bir özenle ele alıyoruz:
     </p>
     <ul>
-      <li>Health-related entries are stored <strong>locally on your device</strong> (via Hive) and, if you are signed in, synchronized to your personal Firestore space, accessible only to you.</li>
-      <li>We <strong>do not sell, share, or transfer</strong> health data to advertisers or third parties for marketing.</li>
-      <li>Shevana is an <strong>informational and tracking tool</strong>; it does not provide medical diagnosis, treatment, or professional advice. Always consult a qualified healthcare provider for medical decisions.</li>
-      <li>You can delete all your health data at any time from within the App's settings, which also triggers deletion from cloud storage.</li>
+      <li>Sağlıkla ilgili kayıtlar <strong>cihazınızda yerel olarak</strong> (Hive aracılığıyla) saklanır ve giriş yaptıysanız yalnızca size ait kişisel Firestore alanınıza senkronize edilir.</li>
+      <li>Sağlık verilerini <strong>satmayız, paylaşmayız veya pazarlama amacıyla</strong> reklamverenlere ya da üçüncü taraflara aktarmayız.</li>
+      <li>Shevana <strong>bilgilendirme ve takip aracıdır</strong>; tıbbi teşhis, tedavi veya profesyonel tavsiye sağlamaz. Tıbbi kararlar için her zaman nitelikli bir sağlık uzmanına danışın.</li>
+      <li>Tüm sağlık verilerinizi uygulamanın ayarlarından istediğiniz zaman silebilirsiniz; bu işlem bulut depolamadan da silmeyi tetikler.</li>
     </ul>
 
-    <h2>4. Data Sharing</h2>
-    <p>We do not sell your personal data. We share limited data only with trusted service providers that help operate our Apps:</p>
+    <h2>4. Veri Paylaşımı</h2>
+    <p>Kişisel verilerinizi satmayız. Yalnızca uygulamalarımızı çalıştırmamıza yardımcı olan güvenilir hizmet sağlayıcılarla sınırlı veri paylaşırız:</p>
     <ul>
-      <li><strong>Firebase</strong> (Google LLC) — authentication, database, analytics, crash reporting, cloud functions, push notifications.</li>
-      <li><strong>Google Play Billing</strong> — purchase processing.</li>
-      <li><strong>Google AdMob</strong> — advertising in free tiers. You can reset or opt out of personalized advertising from your device settings.</li>
+      <li><strong>Firebase</strong> (Google LLC) — kimlik doğrulama, veritabanı, analizler, çökme raporlama, bulut işlevleri, push bildirimleri.</li>
+      <li><strong>Google Play Faturalandırma</strong> — satın alma işleme.</li>
+      <li><strong>Google AdMob</strong> — ücretsiz katmanlarda reklam. Cihaz ayarlarınızdan kişiselleştirilmiş reklamlardan çıkabilir veya sıfırlayabilirsiniz.</li>
     </ul>
-    <p>These providers are contractually bound to protect your data and use it only for the services they provide to us.</p>
+    <p>Bu sağlayıcılar verilerinizi koruma ve yalnızca bize sundukları hizmetler için kullanma konusunda sözleşmeyle bağlıdır.</p>
 
-    <h2>5. Data Retention and Deletion</h2>
+    <h2>5. Veri Saklama ve Silme</h2>
     <p>
-      We keep your data as long as your account is active or as required to provide the service. You can request deletion of your account and associated data at any time by contacting us at <a href="mailto:alibykdag@gmail.com">alibykdag@gmail.com</a>. We will process deletion requests within 30 days.
+      Verilerinizi hesabınız etkin olduğu sürece veya hizmet sağlamak için gerekli olduğu sürece saklarız. Hesabınızın ve ilgili verilerin silinmesini istediğiniz zaman <a href="mailto:alibykdag@gmail.com">alibykdag@gmail.com</a> adresinden bize ulaşarak talep edebilirsiniz. Silme taleplerini 30 gün içinde işleme alıyoruz.
     </p>
 
-    <h2>6. Children's Privacy</h2>
+    <h2>6. Çocukların Gizliliği</h2>
     <p>
-      Most of our Apps are not directed at children under 13. Okutopia is a children's app and complies with applicable children's privacy regulations — it does not require personal information from child users and does not contain third-party advertising targeted at children.
+      Uygulamalarımızın çoğu 13 yaş altı çocuklara yönelik değildir. Okutopia bir çocuk uygulamasıdır ve geçerli çocuk gizliliği düzenlemelerine uyar — çocuk kullanıcılardan kişisel bilgi talep etmez ve çocuklara yönelik üçüncü taraf reklamı içermez.
     </p>
 
-    <h2>7. Security</h2>
+    <h2>7. Güvenlik</h2>
     <p>
-      We use industry-standard safeguards, including TLS encryption in transit, encrypted local storage for sensitive data (via <code>flutter_secure_storage</code> and the Hive encryption layer), and Firebase's security rules for access control. However, no method of electronic transmission or storage is 100% secure.
+      Aktarım sırasında TLS şifreleme, hassas veriler için şifrelenmiş yerel depolama (<code>flutter_secure_storage</code> ve Hive şifreleme katmanı aracılığıyla) ve erişim kontrolü için Firebase güvenlik kuralları gibi sektör standardı önlemleri kullanırız. Ancak hiçbir elektronik aktarım veya depolama yöntemi %100 güvenli değildir.
     </p>
 
-    <h2>8. Your Rights</h2>
+    <h2>8. Haklarınız</h2>
     <p>
-      Depending on your location (for example, under the GDPR in the EU or KVKK in Türkiye), you may have the right to access, correct, export, or delete your personal data, and to object to or restrict certain processing. To exercise any of these rights, contact us at <a href="mailto:alibykdag@gmail.com">alibykdag@gmail.com</a>.
+      Bulunduğunuz yere bağlı olarak (örneğin AB'de GDPR veya Türkiye'de KVKK uyarınca), kişisel verilerinize erişme, düzeltme, dışa aktarma veya silme hakkınız ile belirli işlemlere itiraz etme veya bunları kısıtlama hakkınız olabilir. Bu haklarınızdan herhangi birini kullanmak için <a href="mailto:alibykdag@gmail.com">alibykdag@gmail.com</a> adresinden bize ulaşın.
     </p>
 
-    <h2>9. Changes to This Policy</h2>
+    <h2>9. Bu Politikadaki Değişiklikler</h2>
     <p>
-      We may update this Privacy Policy from time to time. When we make material changes, we will post the updated version here and update the "Last updated" date above. Continued use of the Apps after changes are posted means you accept the updated policy.
+      Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler yaptığımızda, güncellenmiş sürümü burada yayınlar ve yukarıdaki "Son güncelleme" tarihini değiştiririz. Değişiklikler yayınlandıktan sonra Uygulamaları kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.
     </p>
 
-    <h2>10. Contact</h2>
+    <h2>10. İletişim</h2>
     <p>
-      If you have any questions about this Privacy Policy or our data practices, reach out to us at <a href="mailto:alibykdag@gmail.com">alibykdag@gmail.com</a>.
+      Bu Gizlilik Politikası veya veri uygulamalarımız hakkında herhangi bir sorunuz varsa <a href="mailto:alibykdag@gmail.com">alibykdag@gmail.com</a> adresinden bize ulaşın.
     </p>
   </main>
 
   <footer>
     <div class="container">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-      <a href="mailto:alibykdag@gmail.com">Contact</a>
+      <a href="index.html">Anasayfa</a>
+      <a href="privacy.html">Gizlilik</a>
+      <a href="support.html">Destek</a>
+      <a href="mailto:alibykdag@gmail.com">İletişim</a>
+      <a href="privacy-en.html">English</a>
       <p style="margin-top: 16px;">© <span id="year"></span> Bykdg</p>
     </div>
   </footer>
